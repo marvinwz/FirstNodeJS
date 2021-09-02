@@ -2,15 +2,13 @@ const https = require("https")
 
 const data = JSON.stringify({});
 
-const authKey = ''
-
 const options = {
     hostname: 'cloud.crownstone.rocks',
     path: '/api/users/me',
     method: 'GET',
     headers: {
         'Content-Type': 'application/json',
-        'Authorization': authKey
+        'Authorization': ''
     }
 }
 //request

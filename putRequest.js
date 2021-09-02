@@ -2,7 +2,7 @@ const https = require("https")
 
 //const data = JSON.stringify({});
 
-const authKey = '0dAQF35xhfQ1Ec0sSEMgFQJtCqgBHxpO0FjU9IU5Sws5BFNafgLukEVjrdPODbYV'
+const authKey = ''
 const userID = '612e25b67de9b000044b9459'
 const stoneID = '612f43e879ce050004a0447c'
 const state = 1
