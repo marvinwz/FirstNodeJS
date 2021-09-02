@@ -1,15 +1,25 @@
 const https = require("https")
 
-const data = JSON.stringify({});
+//const data = JSON.stringify({});
+
+const authKey = '0dAQF35xhfQ1Ec0sSEMgFQJtCqgBHxpO0FjU9IU5Sws5BFNafgLukEVjrdPODbYV'
+const userID = '612e25b67de9b000044b9459'
+const stoneID = '612f43e879ce050004a0447c'
+const state = 1
+
+const params = new URLSearchParams({
+    switchState: '0',
+});
+const query = params.toString();
 
 const options = {
     hostname: 'cloud.crownstone.rocks',
-    path: '/api/users/me',
-    method: 'GET',
+    path: '/api/Stones/' + stoneID + '/setSwitchStateRemotely?' + query,
+    method: 'PUT',
     headers: {
         'Content-Type': 'application/json',
-        'Authorization': ''
-    }
+        'Authorization': authKey
+    },
 }
 //request
 const req = https.request(options, (res) => {
@@ -28,5 +38,11 @@ const req = https.request(options, (res) => {
     .on("error", function (err) {
         console.log("Error: " + err.message);
     })
-req.write(data)
+
+
+console.log(options)
+console.log(params)
+console.log(query)
+//console.log(data)
+//req.write(data)
 req.end();
